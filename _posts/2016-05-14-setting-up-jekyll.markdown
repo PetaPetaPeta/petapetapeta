@@ -1,8 +1,14 @@
 ---
 layout: post
-title: Setting up jekyll
-autho: Peter Poulsen
-categories: ["docker", "jekyll"]
+title: setting up jekyll
+author: Peter Poulsen
+categories: docker jekyll
 ---
-# Introduction
-In this blog post I will describe how to set up a Jekyll-based blog on Github by the use of Docker.
+This blog post describes how to set up a blog on Github by the use of Docker and Jekyll.<!--more-->
+
+Before you get started ensure that you have the following two available:
+
+* <a href="https://github.com">A Github account</a>
+* <a href="https://www.docker.com/products/docker-toolbox">Docker Toolbox</a>
+
+# Getting started

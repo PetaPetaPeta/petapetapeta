@@ -2,20 +2,43 @@
 layout: default
 ---
 
-<div class="home">
+<section>
+  <div class="jumbotron">
+    <div class="container">
+      {{site.description}}
 
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+    </div>
 
 </div>
+</section>
+
+<section id="page-content">
+  <div class="container">
+    <div class="post-list">
+  {%  for post in site.posts %}
+  <div class="post-box">
+    <div class="post-title">
+    <a class="post-title" href="{{post.url | prepend:site.baseurl }}" > {{ post.title }}</a>
+    </div>
+    <div class="post-excerpt">
+      {{ post.excerpt | strip_html }}
+    </div>
+    <div class="posted">
+      posted on
+      <span class="posted-on">
+
+        {{ post.date | date: "%A, %B %-d, %Y" }}
+      </span>
+      <span class="in">
+        in
+      </span>
+      <span class="categories-on">
+        {% for category in post.categories%}
+        {{category}}{% if forloop.last %}{% else %},{% endif %}
+        {% endfor %}
+      </span>
+    </div>
+  </div>
+  {% endfor %}
+  </div>
+</section>
